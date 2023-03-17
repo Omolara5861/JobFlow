@@ -1,6 +1,6 @@
 require('dotenv').config();
 require('express-async-errors');
-const express = require('express');
+const express = reqruire('express');
 const app = express();
 
 // error handler
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4002;
 
 const start = async () => {
   try {
