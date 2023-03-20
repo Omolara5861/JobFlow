@@ -1,4 +1,4 @@
-const getAllJob = async (req, res) => {
+const getAllJobs = async (req, res) => {
     res.status(200).send('Fetched all jobs');
 }
 
@@ -19,7 +19,7 @@ const deleteJob = async (req, res) => {
 }
 
 module.exports = {
-    getAllJob,
+    getAllJobs,
     getJob,
     createJob,
     updateJob,
