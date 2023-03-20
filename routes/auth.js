@@ -3,4 +3,4 @@ const router = Router();
 const {login, register} = require('../controllers/auth')
 
 router.post('/register', register);
-router.get('/login', login);
+router.post('/login', login);
