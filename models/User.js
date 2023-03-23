@@ -28,7 +28,7 @@ UserSchema.pre('save', function() {
 });
 
 UserSchema.methods.createJWT = function() {
-    return jwt.sign({id: this._id, name: this.name}, 'randomsecret', {expiresIn: '30d'})
+    return jwt.sign({id: this._id, name: this.name}, process.env.JWT_SECRET, {expiresIn: process.env.JWT_LIFESPAN})
 }
 
 
