@@ -15,4 +15,4 @@ const auth = async (req, res, next) => {
     }
 }
 
-modules.exports = auth;
+module.exports = auth;
