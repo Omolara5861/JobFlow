@@ -4,7 +4,7 @@ const JobSchema = new Schema({
     company: {
         type: String,
         required: [true, 'Pls provide the company name'],
-        maxLength: 3
+        maxLength: 50
     },
     position: {
         type: String,
