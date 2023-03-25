@@ -31,5 +31,10 @@ UserSchema.methods.createJWT = function() {
     return jwt.sign({id: this._id, name: this.name}, process.env.JWT_SECRET, {expiresIn: process.env.JWT_LIFESPAN})
 }
 
+UserSchema.methods.comparePassword = async function(userPassword) {
+    const isAMatch = bcrypt.compare(userPassword, this.password);
+    return isAMatch;
+}
+
 
 module.exports = model('User', UserSchema);
