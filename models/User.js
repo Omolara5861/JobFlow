@@ -22,9 +22,9 @@ const UserSchema = new Schema({
     }
 });
 
-UserSchema.pre('save', function() {
-    const salt = bcrypt.genSalt(11);
-    this.password = bcrypt.hash(this.password, salt);
+UserSchema.pre('save', async function() {
+    const salt = await bcrypt.genSalt(11);
+    this.password = await bcrypt.hash(this.password, salt);
 });
 
 UserSchema.methods.createJWT = function() {
@@ -32,7 +32,7 @@ UserSchema.methods.createJWT = function() {
 }
 
 UserSchema.methods.comparePassword = async function(userPassword) {
-    const isAMatch = bcrypt.compare(userPassword, this.password);
+    const isAMatch = await bcrypt.compare(userPassword, this.password);
     return isAMatch;
 }
 
