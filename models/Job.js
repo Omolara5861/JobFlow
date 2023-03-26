@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const JobSchema = new Schema({
     company: {
@@ -21,6 +21,6 @@ const JobSchema = new Schema({
         ref: 'User',
         required: [true, 'Pls provide a user ']
     }
-}, {timestamps: true});
+}, { timestamps: true });
 
 module.exports = model('Job', JobSchema);
