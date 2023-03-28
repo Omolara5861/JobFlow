@@ -65,12 +65,15 @@ const deleteJob = async (req, res) => {
         user: { userID },
         params: { id: jobID },
     } = req;
-    //Finds job with the provided job
+    //Finds job with the provided job ID and user ID then deletes it
     const job = await Job.findByIdAndRemove({ _id: jobID, createdBy: userID });
+    //If no job is found then it throws a not found error
     if (!job) throw new NotFoundError("Cannot find job with the provided ID");
+    //Return success message and status
     res.status(StatusCodes.OK).send("Job deleted successfully");
 };
 
+/** Exports all controller function */
 module.exports = {
     getAllJobs,
     getJob,
