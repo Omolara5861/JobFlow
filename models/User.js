@@ -1,7 +1,9 @@
+/** Necessary module imports */
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+/** Define a new schema for user */
 const UserSchema = new Schema({
     name: {
         type: String,
@@ -22,19 +24,31 @@ const UserSchema = new Schema({
     }
 });
 
+/**
+ * Use bcryptjs to hash the password before saving it to the database */
 UserSchema.pre('save', async function () {
+    //Generates salt
     const salt = await bcrypt.genSalt(11);
+    //Hash the password using the generated salt
     this.password = await bcrypt.hash(this.password, salt);
 });
 
+/** Add method that creates JWT token on the @user schema
+ * @return Create JWT token with the user ID and user name, expires after a certain time
+ */
 UserSchema.methods.createJWT = function () {
     return jwt.sign({ userID: this._id, name: this.name }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_LIFESPAN })
 }
 
+/**
+ * Compare the user entered password with hashed password in the database
+ * @param {string} userPassword - The user entered password
+ * @returns true if the user's password match with the hashed password ,else false
+ */
 UserSchema.methods.comparePassword = async function (userPassword) {
     const isAMatch = await bcrypt.compare(userPassword, this.password);
     return isAMatch;
 }
 
-
+/** Export the model with user Schema */
 module.exports = model('User', UserSchema);
