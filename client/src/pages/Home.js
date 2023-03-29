@@ -12,7 +12,7 @@ function Home() {
       {user && <Redirect to='/dashboard' />}
       <Wrapper>
         <nav>
-          <img src={logo} class="logo" alt='jobs app' />
+          <img src={logo} className="logo" alt='jobs app' />
         </nav>
         <div className='container page'>
         <div className='info'>
