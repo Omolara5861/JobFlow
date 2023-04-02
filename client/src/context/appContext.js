@@ -1,3 +1,8 @@
+/**
+ * @fileoverview This code creates a context and provider using React's Context API. It exports the useGlobalContext hook (@function useGlobalContext) and the AppProvider component (@function AppProvider), allowing the storage and management of states related to user authentication and job posting throughout the app's component
+ */
+
+//Necessary dependencies and constants imports
 import axios from 'axios'
 import '../axios'
 import React, { useContext, useEffect, useReducer } from 'react'
@@ -19,6 +24,7 @@ import {
 } from './actions'
 import reducer from './reducer'
 
+/** An object containing the default initial state of the application */
 const initialState = {
   user: null,
   isLoading: false,
@@ -28,8 +34,15 @@ const initialState = {
   singleJobError: false,
   editComplete: false,
 }
+
+/** Returns a context objects which holds state values to be accessible to @function useGlobalContext*/
 const AppContext = React.createContext()
 
+/**
+ * A function component that accepts `children` as props and contains functions for user authentication, job creation, and job modification. Wrap the components that need access to state values provided by `AppContext`
+ * @param {Object} children
+ * @returns the context provider with all the defined functions and the state
+ */
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
@@ -161,7 +174,11 @@ const AppProvider = ({ children }) => {
     </AppContext.Provider>
   )
 }
-// make sure use
+
+/**
+ * A custom hook function that enables components to access the state and functions defined in `AppProvider` function. It does this by calling the useContext hook, passing `AppContext` as an argument and then returning the resulting value.
+ * @returns the context passed down from the provider component AppProvider
+ */
 export const useGlobalContext = () => {
   return useContext(AppContext)
 }
