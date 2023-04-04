@@ -1,3 +1,4 @@
+// Importing necessary libraries and components
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { useGlobalContext } from '../context/appContext';
@@ -6,14 +7,18 @@ import Navbar from '../components/Navbar';
 import Jobs from '../components/Jobs';
 
 function Dashboard() {
+  // Initializing state for form input values
   const [values, setValues] = useState({ company: '', position: '' });
 
+  // Function to handle changes in form input values
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
+  // Accessing context for isLoading, showAlert, fetchJobs, and createJob
   const { isLoading, showAlert, fetchJobs, createJob } = useGlobalContext();
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     const { company, position } = values;
@@ -22,21 +27,26 @@ function Dashboard() {
       setValues({ company: '', position: '' });
     }
   };
+
+  // Fetching jobs on component mount
   useEffect(() => {
     fetchJobs();
   }, []);
+
+  // Rendering the dashboard with the Navbar, job form, and Jobs component
   return (
     <>
       <Navbar />
 
       <Wrapper className='page'>
+      /* Rendering an alert if showAlert is true */
         {showAlert && (
           <div className='alert alert-danger'>
             there was an error, please try again
           </div>
         )}
         <form className='job-form' onSubmit={handleSubmit}>
-          {/* position */}
+          {/* Rendering a form row component for position input */}
           <FormRow
             type='name'
             name='position'
@@ -45,7 +55,7 @@ function Dashboard() {
             horizontal
             placeholder='Position'
           />
-          {/* company */}
+          {/* Rendering a form row component for company input */}
           <FormRow
             type='name'
             name='company'
@@ -54,6 +64,7 @@ function Dashboard() {
             horizontal
             placeholder='Company'
           />
+          /* Rendering the submit button */
           <button type='submit' className='btn' disabled={isLoading}>
             {isLoading ? 'Adding New Job...' : 'Add Job'}
           </button>
@@ -64,7 +75,7 @@ function Dashboard() {
     </>
   );
 }
-
+// Styling the dashboard component
 const Wrapper = styled.section`
   padding: 3rem 0;
 
