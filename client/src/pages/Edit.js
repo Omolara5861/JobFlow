@@ -1,11 +1,16 @@
+// Import necessary modules
 import { useState, useEffect } from 'react';
 import { useParams, Redirect, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useGlobalContext } from '../context/appContext';
 import FormRow from '../components/FormRow';
 import Navbar from '../components/Navbar';
+
 function Update() {
+  // Get the id from the route parameters
   const { id } = useParams();
+
+  // Deconstruct the items needed from the global context
   const {
     isLoading,
     editItem,
@@ -16,16 +21,19 @@ function Update() {
     editComplete,
   } = useGlobalContext();
 
+  // Set initial states for the form
   const [values, setValues] = useState({
     company: '',
     position: '',
     status: '',
   });
 
+  // Fetch the single job corresponding to the id on page load
   useEffect(() => {
     fetchSingleJob(id);
   }, [id]);
 
+  // Update the form values if the job info is fetched
   useEffect(() => {
     if (editItem) {
       const { company, position, status } = editItem;
@@ -33,9 +41,12 @@ function Update() {
     }
   }, [editItem]);
 
+  // Handle form input changes
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
+
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     const { company, position, status } = values;
@@ -43,24 +54,28 @@ function Update() {
       editJob(id, { company, position, status });
     }
   };
+
+  // Show loading spinner while fetching job info
   if (isLoading && !editItem) {
     return <div className='loading'></div>;
   }
 
+  // Show error message if job info isn't found or there's an error
   if (!editItem || error) {
     return (
       <>
         {!user && <Redirect to='/' />}
         <ErrorContainer className='page'>
           <h5>There was an error, please double check your job ID</h5>
-
           <Link to='/dashboard' className='btn'>
-            dasboard
+            dashboard
           </Link>
         </ErrorContainer>
       </>
     );
   }
+
+  // Show the Update form
   return (
     <>
       {!user && <Redirect to='/' />}
@@ -74,7 +89,6 @@ function Update() {
         <form className='form' onSubmit={handleSubmit}>
           <p>{editComplete && 'Success! Edit Complete'}</p>
           <h4>Update Job</h4>
-          {/* company */}
           <div className='form-container'>
             <FormRow
               type='name'
@@ -116,6 +130,8 @@ function Update() {
     </>
   );
 }
+
+// Styled Components
 const ErrorContainer = styled.section`
   text-align: center;
   padding-top: 6rem; ;
@@ -180,4 +196,6 @@ const Container = styled.section`
     }
   }
 `;
+
+// Export the Update component
 export default Update;
