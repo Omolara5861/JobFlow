@@ -1,35 +1,40 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import main from '../assets/main.svg';
-import { useGlobalContext } from '../context/appContext';
-import { Redirect } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import main from "../assets/main.svg";
+import { useGlobalContext } from "../context/appContext";
+import { Redirect } from "react-router-dom";
+import logo from "../assets/logo.png";
 function Home() {
   const { user } = useGlobalContext();
 
   return (
     <>
-      {user && <Redirect to='/dashboard' />}
+      {user && <Redirect to="/dashboard" />}
       <Wrapper>
         <nav>
-          <img src={logo} className="logo" alt='jobs app' />
+          <img src={logo} className="logo" alt="jobs app" />
         </nav>
-        <div className='container page'>
-        <div className='info'>
+        <div className="container page">
+          <div className="info">
             <h1>
               job <span>tracking</span> app
             </h1>
             <p>
-              I'm baby wayfarers hoodie next level taiyaki brooklyn cliche blue
-              bottle single-origin coffee chia. Aesthetic post-ironic venmo,
-              quinoa lo-fi tote bag adaptogen everyday carry meggings +1 brunch
-              narwhal.
+              Looking for a better way to keep track of your job applications?
+              Our innovative job tracking app is the perfect solution! With our
+              user-friendly interface, you can easily
+              manage your job search from start to finish. No more lost
+              applications or missed deadlines - Jobflow keeps all your job
+              details organized in one place, so you can stay on top of your
+              progress and focus on landing your dream job. So why wait? Start
+              taking control of your job search today and sign up for our job
+              tracking app.
             </p>
-            <Link to='/register' className='btn btn-hero'>
+            <Link to="/register" className="btn btn-hero">
               Login/Register
             </Link>
           </div>
-          <img src={main} alt='job hunt' className='img main-img' />
+          <img src={main} alt="job hunt" className="img main-img" />
         </div>
       </Wrapper>
     </>
@@ -44,7 +49,7 @@ const Wrapper = styled.div`
     margin-top: -3rem;
   }
   .logo {
-    width: 130px
+    width: 130px;
   }
   nav {
     width: var(--fluid-width);
