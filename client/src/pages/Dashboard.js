@@ -31,6 +31,7 @@ function Dashboard() {
   // Fetching jobs on component mount
   useEffect(() => {
     fetchJobs();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Rendering the dashboard with the Navbar, job form, and Jobs component
@@ -39,7 +40,7 @@ function Dashboard() {
       <Navbar />
 
       <Wrapper className='page'>
-      /* Rendering an alert if showAlert is true */
+      {/* Rendering an alert if showAlert is true */}
         {showAlert && (
           <div className='alert alert-danger'>
             there was an error, please try again
@@ -64,7 +65,7 @@ function Dashboard() {
             horizontal
             placeholder='Company'
           />
-          /* Rendering the submit button */
+          {/* Rendering the submit button */}
           <button type='submit' className='btn' disabled={isLoading}>
             {isLoading ? 'Adding New Job...' : 'Add Job'}
           </button>
