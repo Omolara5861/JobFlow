@@ -20,15 +20,7 @@ function Home() {
               job <span>tracking</span> app
             </h1>
             <p>
-              Looking for a better way to keep track of your job applications?
-              Our innovative job tracking app is the perfect solution! With our
-              user-friendly interface, you can easily
-              manage your job search from start to finish. No more lost
-              applications or missed deadlines - Jobflow keeps all your job
-              details organized in one place, so you can stay on top of your
-              progress and focus on landing your dream job. So why wait? Start
-              taking control of your job search today and sign up for our job
-              tracking app.
+            Keep track of your job applications with Jobflow - the innovative job tracking app. Manage your job search easily with a user-friendly interface. Stay organized, avoid missing deadlines, and focus on your dream job. Sign up for Jobflow today.
             </p>
             <Link to="/register" className="btn btn-hero">
               Login/Register
