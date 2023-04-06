@@ -1,5 +1,5 @@
 import axios from 'axios';
-axios.defaults.baseURL = 'http://http://localhost:4002/api/v1';
+axios.defaults.baseURL = 'http://http://localhost:4002/';
 
 axios.interceptors.request.use(function (req) {
   const user = localStorage.getItem('user');
