@@ -72,7 +72,7 @@ To start the frontend, run the following command in the client directory:
 ```bash
 npm start
 ```
-This will start the frontend on http://localhost:3000/.
+This will start the frontend on `http://localhost:3000/`.
 
 ### Running the Backend
 
@@ -80,11 +80,11 @@ To start the backend, navigate to the server folder and run the following comman
 ```bash
 npm start
 ```
-This will start the backend on http://localhost:4002/.
+This will start the backend on `http://localhost:4002/`.
 
 Once the application is up and running, you can use it to manage your job applications. You can create, edit, and delete job listings.
 
-Job Flow comes with a comprehensive API documentation, using Swagger. You can access the API documentation by navigating to http://localhost:4002/api-docs in your web browser.
+Job Flow comes with a comprehensive API documentation, using Swagger. You can access the API documentation by navigating to `http://localhost:4002/api-docs` in your web browser.
 
 ## Technologies
 This project was built with ![Visual Studio](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) using:
