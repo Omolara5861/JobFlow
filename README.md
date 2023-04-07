@@ -15,6 +15,9 @@ Job Flow also includes a comprehensive [API documentation](), using Swagger. Thi
   - [Introduction](#introduction)
   - [Table of contents](#table-of-contents)
   - [Installation](#installation)
+  - [Usage](#usage)
+    - [Running the Frontend](#running-the-frontend)
+    - [Running the Backend](#running-the-backend)
 
 <!-- ## Preview
 
@@ -57,4 +60,25 @@ cd ..
 ```bash
 cd server && npm i
 ```
+
+## Usage
+### Running the Frontend
+
+To start the frontend, run the following command in the client directory:
+```bash
+npm start
+```
+This will start the frontend on http://localhost:3000/.
+
+### Running the Backend
+
+To start the backend, navigate to the server folder and run the following command:
+```bash
+npm start
+```
+This will start the backend on http://localhost:4002/.
+
+Once the application is up and running, you can use it to manage your job applications. You can create, edit, and delete job listings.
+
+Job Flow comes with a comprehensive API documentation, using Swagger. You can access the API documentation by navigating to http://localhost:4002/api-docs in your web browser.
 
