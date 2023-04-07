@@ -20,6 +20,7 @@ Job Flow also includes a comprehensive [API documentation](), using Swagger. Thi
     - [Running the Backend](#running-the-backend)
   - [Technologies](#technologies)
   - [Contributing](#contributing)
+  - [License](#license)
 
 <!-- ## Preview
 
@@ -112,3 +113,13 @@ If you'd like to contribute to Job Flow, please follow these steps:
 - Commit your changes and push them to your forked repository.
 - Submit a pull request to the original repository.
 
+## License
+This project is licensed under the
+[MIT license](https://opensource.org/licenses/MIT).
+Please see the [LICENSE file](LICENSE.md) for more information.
+
+> You can do whatever you want as long as you include the original copyright and
+> license notice in any copy of the project/source.
+
+
+*Copyright (c) 2023 Laradev. All right reserved.*
