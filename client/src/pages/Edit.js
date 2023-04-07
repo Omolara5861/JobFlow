@@ -112,9 +112,10 @@ function Update() {
                 onChange={handleChange}
                 className='status'
               >
-                <option value='pending'>pending</option>
-                <option value='interview'>interview</option>
-                <option value='declined'>declined</option>
+                <option value='applied'>applied</option>
+                <option value='interviewing'>interviewing</option>
+                <option value='offer received'>offer received</option>
+                <option value='rejected'>rejected</option>
               </select>
             </div>
             <button
