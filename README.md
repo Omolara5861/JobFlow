@@ -19,6 +19,7 @@ Job Flow also includes a comprehensive [API documentation](), using Swagger. Thi
     - [Running the Frontend](#running-the-frontend)
     - [Running the Backend](#running-the-backend)
   - [Technologies](#technologies)
+  - [Contributing](#contributing)
 
 <!-- ## Preview
 
@@ -100,3 +101,14 @@ This project was built with ![Visual Studio](https://img.shields.io/badge/Visual
 - **Database** & **Documentation**<br />
         ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
         ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+
+## Contributing
+If you'd like to contribute to Job Flow, please follow these steps:
+
+- Fork this repository to your own GitHub account.
+- Clone the forked repository to your local machine.
+- Create a new branch for your changes.
+- Make your changes and test them thoroughly
+- Commit your changes and push them to your forked repository.
+- Submit a pull request to the original repository.
+
