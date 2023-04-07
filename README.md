@@ -18,6 +18,7 @@ Job Flow also includes a comprehensive [API documentation](), using Swagger. Thi
   - [Usage](#usage)
     - [Running the Frontend](#running-the-frontend)
     - [Running the Backend](#running-the-backend)
+  - [Technologies](#technologies)
 
 <!-- ## Preview
 
@@ -82,3 +83,20 @@ Once the application is up and running, you can use it to manage your job applic
 
 Job Flow comes with a comprehensive API documentation, using Swagger. You can access the API documentation by navigating to http://localhost:4002/api-docs in your web browser.
 
+## Technologies
+This project was built with ![Visual Studio](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) using:
+* __Frontend__<br/>
+![REACT BADGE](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![STYLED-COMPONENTS BADGE](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![REACT ROUTER BADGE](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Netlify Badge](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
+
+* __Backend__<br/>
+        ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+        ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+        ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+        ![Render BADGE](https://img.shields.io/badge/Render-FF69B4?style=for-the-badge&logo=render&logoColor=white)
+
+- **Database** & **Documentation**<br />
+        ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+        ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
