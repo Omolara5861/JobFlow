@@ -1,6 +1,7 @@
 # Job Flow
 
 [![LICENSE](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+![Swagger Validator](https://img.shields.io/swagger/valid/3.0?specUrl=https%3A%2F%2Fraw.githubusercontent.com%2FOmolara5861%2FJobFlow%2Fmaster%2Fserver%2Fswagger.yml%3Ftoken%3DGHSAT0AAAAAAB4CCVI7DHMT57PIBPMSQQWIZBQMXAA&style=flat-square)
 
 ## Introduction
 Job Flow is a web-based application that allows users to manage their job applications. The application provides a simple and intuitive interface for users to create, view, and update job listings. Users can add important details such as the job title, company name, and application deadline. The application also includes features for scheduling interviews and tracking the status of each application.
