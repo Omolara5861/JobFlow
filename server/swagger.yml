@@ -1,0 +1,360 @@
+openapi: 3.0.0
+info:
+  title: Jobflow API
+  description: "The Job Applications API is a backend web service that enables users to manage their job applications. It is built using Node.js, Express, MongoDB, and Mongoose, and it employs JSON Web Tokens (JWT) for user authentication.\n\nThe API provides endpoints for user registration, login, and logout. Once authenticated, users can create, read, update, and delete job applications using the provided endpoints. Each job application consists of a title, company name, job description, job location, and application status. The status can be one of \"Applied\", \"Interviewing\", \"Offer Received\", or \"Rejected\".\n\nThe API supports error handling for common HTTP status codes and MongoDB-related errors, providing meaningful error messages that help clients identify and resolve issues quickly. \n\nOverall, the Job Applications API is a flexible and reliable backend solution for managing job applications, with a simple yet robust interface that allows users to easily track their progress and streamline their job search.\n\n\nAPI Base URL\nThe base URL for the API is https://jobflow-api-mpc1.onrender.com/api/v1. All endpoints described below should be appended to this base URL.\n\nAuthentication\nThe Jobflow API uses JWT for authentication. To access protected endpoints, you must provide a valid JSON Web Token in the Authorization header of your request."
+  contact:
+    name: Omolara Adebowale
+    url: https://github.com/omolara5861
+    email: debbiegterra@gmail.com
+  version: '1.0'
+servers:
+- url: https://jobflow-api-mpc1.onrender.com/api/v1
+  variables: {}
+paths:
+  /auth/register:
+    post:
+      tags:
+      - auth
+      summary: Register User
+      description: This endpoint allows users to register for a new account. The request body should include an email address and a password.
+      operationId: RegisterUser
+      parameters: []
+      requestBody:
+        description: User's registration details
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/RegisterUserRequest'
+              - description: User's registration details
+                example:
+                  name: Debbie
+                  email: debbie88@gmail.com
+                  password: secreteiop
+            example:
+              name: Debbie
+              email: debbie88@gmail.com
+              password: secreteiop
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+        '400':
+          description: Email and password are required fields
+          content:
+            application/json:
+              schema: {}
+        '409':
+          description: A unique value for email field is required, an email with the address provided already exist, pls provide another value
+          content:
+            application/json:
+              schema: {}
+        '500':
+          description: Something went wrong pls try again
+          content:
+            application/json:
+              schema: {}
+      deprecated: false
+      security: []
+  /auth/login:
+    post:
+      tags:
+      - auth
+      summary: Login User
+      description: This endpoint allows users to authenticate with their email address and password. The request body should include these credentials.
+      operationId: LoginUser
+      parameters: []
+      requestBody:
+        description: User's login details
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/LoginUserRequest'
+              - description: User's login details
+                example:
+                  email: debbie88@gmail.com
+                  password: secreteiop
+            example:
+              email: debbie88@gmail.com
+              password: secreteiop
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+        '401':
+          description: Invalid email address or password.
+          content:
+            application/json:
+              schema: {}
+        '500':
+          description: Something went wrong pls try again
+          content:
+            application/json:
+              schema: {}
+      deprecated: false
+      security: []
+  /jobs/{id}:
+    get:
+      tags:
+      - jobs
+      summary: Get Single Job
+      description: This endpoint allows authenticated users to retrieve a single job application by its ID.
+      operationId: GetSingleJob
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+        '400':
+          description: The provided ID is not a correct syntax
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Cannot find job with the provided ID
+          content:
+            application/json:
+              schema: {}
+        '500':
+          description: Something went wrong pls try again
+          content:
+            application/json:
+              schema: {}
+      deprecated: false
+      security:
+      - bearer: []
+    patch:
+      tags:
+      - jobs
+      summary: Update Job
+      description: This endpoint allows authenticated users to update a job application by its ID. The request body should include one of the following fields to update (position, company name, and application status)
+      operationId: UpdateJob
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UpdateJobRequest'
+              - example:
+                  company: Google
+                  position: Software Engineer
+                  status: pending
+            example:
+              company: Google
+              position: Software Engineer
+              status: pending
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+        '400':
+          description: The provided ID is not a correct syntax
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Cannot find job with the provided ID
+          content:
+            application/json:
+              schema: {}
+        '500':
+          description: Something went wrong pls try again
+          content:
+            application/json:
+              schema: {}
+      deprecated: false
+      security:
+      - bearer: []
+    delete:
+      tags:
+      - jobs
+      summary: Delete Job
+      description: This endpoint allows authenticated users to delete a job application by its ID.
+      operationId: DeleteJob
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+        '400':
+          description: The provided ID is not a correct syntax
+          content:
+            application/json:
+              schema: {}
+        '404':
+          description: Cannot find job with the provided ID
+          content:
+            application/json:
+              schema: {}
+        '500':
+          description: Something went wrong pls try again
+          content:
+            application/json:
+              schema: {}
+      deprecated: false
+      security:
+      - bearer: []
+  /jobs:
+    get:
+      tags:
+      - jobs
+      summary: Get All Jobs
+      description: This endpoint allows authenticated users to retrieve all their job applications.
+      operationId: GetAllJobs
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+        '500':
+          description: Something went wrong pls try again
+          content:
+            application/json:
+              schema: {}
+      deprecated: false
+      security:
+      - bearer: []
+    post:
+      tags:
+      - jobs
+      summary: Create New Job
+      description: This endpoint allows authenticated users to create a new job application. The request body should include the position, company name, and application status
+      operationId: CreateNewJob
+      parameters: []
+      requestBody:
+        description: User's job details
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/CreateNewJobRequest'
+              - description: User's job details
+                example:
+                  company: Netflix
+                  position: Backend Engineer
+                  status: interview
+            example:
+              company: Netflix
+              position: Backend Engineer
+              status: interview
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+        '400':
+          description: Company or Position fields cannot be empty
+          content:
+            application/json:
+              schema: {}
+        '500':
+          description: Something went wrong pls try again
+          content:
+            application/json:
+              schema: {}
+      deprecated: false
+      security:
+      - bearer: []
+components:
+  schemas:
+    RegisterUserRequest:
+      title: RegisterUserRequest
+      required:
+      - name
+      - email
+      - password
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        name: Debbie
+        email: debbie88@gmail.com
+        password: secreteiop
+    LoginUserRequest:
+      title: LoginUserRequest
+      required:
+      - email
+      - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: debbie88@gmail.com
+        password: secreteiop
+    CreateNewJobRequest:
+      title: CreateNewJobRequest
+      required:
+      - company
+      - position
+      type: object
+      properties:
+        company:
+          type: string
+        position:
+          type: string
+        status:
+          type: string
+      example:
+        company: Netflix
+        position: Backend Engineer
+        status: interview
+    UpdateJobRequest:
+      title: UpdateJobRequest
+      required:
+      - company
+      - position
+      type: object
+      properties:
+        company:
+          type: string
+        position:
+          type: string
+        status:
+          type: string
+      example:
+        company: Google
+        position: Software Engineer
+        status: pending
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security: []
+tags:
+- name: auth
+- name: jobs
