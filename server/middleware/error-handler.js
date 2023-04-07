@@ -35,7 +35,7 @@ const errorHandlerMiddleware = (err, req, res, next) => {
   if (err.code && err.code === 11000) {
     let field = Object.keys(err.keyValue);
     customError.msg = `A unique value for ${field} field is required, an ${field} with the address provided already exist, pls provide another value`;
-    customError.statusCode = StatusCodes.BAD_REQUEST;
+    customError.statusCode = StatusCodes.CONFLICT;
   }
 
   /** Send the JSON response with the custom error message and status code */

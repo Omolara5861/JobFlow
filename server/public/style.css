@@ -1,0 +1,162 @@
+﻿*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent; }
+
+@-ms-viewport {
+  width: device-width;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter UI", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #CFD8DC;
+  text-align: left;
+  background-color: #000000; }
+
+h1 {
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.div {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  margin: auto;
+  text-align: center;
+}
+
+.py-7 {
+  padding: 9rem 0 !important;
+}
+
+.bg-hero {
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='#000000' cx='400' cy='400' r='600'/%3E%3Ccircle fill='#053529' cx='400' cy='400' r='500'/%3E%3Ccircle fill='#0a634d' cx='400' cy='400' r='400'/%3E%3Ccircle fill='#0e9271' cx='400' cy='400' r='300'/%3E%3Ccircle fill='#13c095' cx='400' cy='400' r='200'/%3E%3Ccircle fill='#1de9b6' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  /* background by SVGBackgrounds.com */
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative; }
+  .bg-hero:before {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.7); }
+  .bg-hero .container {
+    z-index: 2;
+    position: relative;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+    -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 2px solid transparent;
+  padding: 0.55rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+  transition: all 0.2s; }
+  @media screen and (prefers-reduced-motion: reduce) {
+    .btn {
+      transition: none; } }
+  .btn:hover, .btn:focus {
+    text-decoration: none; }
+  .btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: none; }
+  .btn.disabled, .btn:disabled {
+    opacity: 0.65; }
+  .btn:not(:disabled):not(.disabled) {
+    cursor: pointer; }
+  .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active {
+    background-image: none; }
+
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none; }
+
+.btn-primary {
+  color: #11171a;
+  background-color: #1de9b6;
+  border-color: #1de9b6; }
+  .btn-primary:hover {
+    color: #ffffff;
+    background-color: #14cc9e;
+    border-color: #13c095; }
+  .btn-primary:focus, .btn-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(29, 233, 182, 0.5); }
+  .btn-primary.disabled, .btn-primary:disabled {
+    color: #11171a;
+    background-color: #1de9b6;
+    border-color: #1de9b6; }
+  .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+  .show > .btn-primary.dropdown-toggle {
+    color: #ffffff;
+    background-color: #13c095;
+    border-color: #12b58c; }
+    .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-primary.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(29, 233, 182, 0.5);
+    }
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px; } }
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  h1 {
+    font-size: 2.5rem;
+  } }
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px; } }
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px; } }

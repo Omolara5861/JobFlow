@@ -19,7 +19,7 @@ const login = async (req, res) => {
     const { email, password } = req.body;
     //Checks if email and password are submitted, throw bad request error if not
     if (!email || !password)
-        throw new BadRequestError("Pls provide your email and password");
+        throw new BadRequestError("Email and password are required fields");
     //Look up user in the database by email
     const user = await User.findOne({ email });
     //If user doesn't exist, throw unauthenticated error

@@ -16,9 +16,9 @@ const JobSchema = new Schema({
     status: {
         type: String,
         //Allowed status values for validation
-        enum: ['pending', 'interview', 'declined', 'accepted'],
+        enum: ['applied', 'interviewing', 'offer received', 'rejected'],
         //Default value if the status is not provided
-        default: 'pending'
+        default: 'applied'
     },
     createdBy: {
         //ObjectId to identify each job's creator
