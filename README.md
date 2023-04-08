@@ -15,6 +15,7 @@ Job Flow also includes a comprehensive [API documentation](https://jobflow-api-m
 - [Job Flow](#job-flow)
   - [Introduction](#introduction)
   - [Table of contents](#table-of-contents)
+  - [Preview](#preview)
   - [Installation](#installation)
   - [Usage](#usage)
     - [Running the Frontend](#running-the-frontend)
@@ -23,12 +24,12 @@ Job Flow also includes a comprehensive [API documentation](https://jobflow-api-m
   - [Contributing](#contributing)
   - [License](#license)
 
-<!-- ## Preview
+## Preview
 
-![The landing page]( "Project Landing page")
+![The landing page](/client/src/assets/preview.png "Project Landing page")
 
 
-[View Project]( "Live link") -->
+[View Project](https://job-flow.netlify.app/ "Live link")
 
 ## Installation
 To install and run this project, you will need to have the following software installed on your computer:
