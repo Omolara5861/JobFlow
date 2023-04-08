@@ -1,7 +1,7 @@
 # Job Flow
 
 [![LICENSE](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5fc08e24-c9e1-400b-a598-15283e11e8b5/deploy-status)](https://app.netlify.com/sites/wonderful-puffpuff-db871e/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5fc08e24-c9e1-400b-a598-15283e11e8b5/deploy-status)](https://app.netlify.com/sites/job-flow/deploys)
 ![Swagger Validator](https://img.shields.io/swagger/valid/3.0?specUrl=https%3A%2F%2Fraw.githubusercontent.com%2FOmolara5861%2FJobFlow%2Fmaster%2Fserver%2Fswagger.yml%3Ftoken%3DGHSAT0AAAAAAB4CCVI7DHMT57PIBPMSQQWIZBQMXAA&style=flat-square)
 
 ## Introduction
